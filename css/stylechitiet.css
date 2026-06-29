@@ -1,0 +1,102 @@
+/* 1. CÀI ĐẶT CHUNG CHO TOÀN BỘ TRANG (BODY) */
+body {
+    font-family: Arial, sans-serif; /* Chọn phông chữ đơn giản, dễ đọc */
+    background-color: #f4f7f6;     /* Màu nền xám nhạt cho toàn bộ trang web */
+    margin: 0;                     /* Xóa bỏ khoảng cách thừa ngoài rìa trình duyệt */
+    padding: 40px 20px;            /* Tạo khoảng cách đệm trên dưới 40px, trái phải 20px */
+}
+
+/* 2. KHUNG CHỨA SẢN PHẨM CHÍNH (CONTAINER) */
+#container {
+    display: flex;                 /* Kích hoạt Flexbox để dễ dàng chia cột */
+    flex-direction: row;           /* Xếp các phần tử bên trong theo hàng ngang (Ảnh 1 bên, Chữ 1 bên) */
+    gap: 50px;                     /* Tạo khoảng cách trống giữa cột ảnh và cột chữ là 50px */
+    background-color: #ffffff;     /* Đổi nền của khung chứa sản phẩm thành màu trắng tinh */
+    padding: 40px;                 /* Khoảng cách từ viền trắng vào đến nội dung bên trong */
+    max-width: 1000px;             /* Giới hạn chiều rộng tối đa của khung là 1000px để không bị quá to */
+    margin: 0 auto;                /* Mẹo căn giữa toàn bộ khung trắng này ra chính giữa màn hình máy tính */
+    border-radius: 12px;           /* Bo tròn nhẹ 4 góc của khung trắng */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Tạo hiệu ứng đổ bóng mờ giúp khung nổi lên 3D đẹp mắt */
+}
+
+/* 3. CỘT TRÁI - HÌNH ẢNH SẢN PHẨM */
+.product-image {
+    flex: 1;                       /* Chia tỷ lệ: Cột ảnh chiếm 50% độ rộng của khung */
+    text-align: center;            /* Căn ảnh ra chính giữa cột */
+}
+
+#image {
+    max-width: 100%;               /* Đảm bảo ảnh không bao giờ bị tràn ra ngoài cột */
+    width: 500px;                  /* Ép chiều rộng ảnh ở mức 500px cho vừa vặn */
+    height: auto;                  /* Tự động tính toán chiều cao theo tỷ lệ ảnh để ảnh không bị bóp méo */
+    object-fit: contain;           /* Giữ nguyên tỷ lệ gốc của ảnh bên trong khung hình */
+    border-radius: 8px;            /* Bo tròn góc cho tấm ảnh */
+    border: 1px solid #eaeaea;     /* Thêm một đường viền mỏng màu xám nhạt quanh ảnh */
+    padding: 10px;                 /* Khoảng trống giữa ảnh và đường viền viền xám */
+}
+
+/* 4. CỘT PHẢI - THÔNG TIN CHI TIẾT SẢN PHẨM */
+.product-info {
+    flex: 1;                       /* Chia tỷ lệ: Cột thông tin chiếm 50% độ rộng còn lại */
+    display: flex;                 
+    flex-direction: column;        /* Xếp Tên -> Giá -> Mô tả -> Nút theo chiều dọc từ trên xuống */
+    justify-content: center;       /* Căn chỉnh nội dung chữ luôn nằm ở giữa theo chiều dọc của cột */
+}
+
+/* Tên sản phẩm */
+#ten {
+    color: #2c3e50;                /* Màu xanh đen sang trọng, đậm nét */
+    font-size: 32px;               /* Phóng to cỡ chữ của tên sản phẩm */
+    margin-top: 0;                 /* Xóa khoảng cách thừa phía trên chữ */
+    margin-bottom: 15px;           /* Tạo khoảng cách vừa phải với phần giá tiền bên dưới */
+}
+
+/* Giá sản phẩm */
+#gia {
+    color: #e74c3c;                /* Đổi sang màu đỏ đô bắt mắt, kích thích mua hàng */
+    font-size: 26px;               /* Cỡ chữ giá tiền to vừa phải */
+    font-weight: bold;             /* Làm đậm chữ giá tiền */
+    margin-top: 0;                 /* Xóa khoảng cách thừa phía trên */
+    margin-bottom: 20px;           /* Cách phần mô tả bên dưới một khoảng 20px */
+}
+
+/* Phần nội dung mô tả chi tiết dài */
+#mota_dai {
+    font-size: 16px;               /* Cỡ chữ tiêu chuẩn để đọc văn bản không bị mỏi mắt */
+    line-height: 1.8;              /* Giãn khoảng cách giữa các dòng chữ giúp đoạn văn thoáng, dễ đọc */
+    color: #555555;                /* Màu chữ xám đậm (giảm độ gắt so với màu đen thuần) */
+    white-space: pre-line;         /* QUAN TRỌNG NHẤT: Giúp nhận diện dấu xuống dòng từ dấu ` trong file JS */
+    margin-bottom: 30px;           /* Cách nút "Quay lại" phía dưới một khoảng 30px */
+}
+
+/* 5. NÚT QUAY LẠI TRANG CHỦ */
+.btn-back {
+    display: inline-block;         /* Chuyển thẻ <a> thành dạng khối để chỉnh được padding */
+    padding: 12px 25px;            /* Độ rộng của nút (Trên dưới dày 12px, Trái phải rộng 25px) */
+    background-color: #3498db;     /* Màu nền của nút là màu xanh dương */
+    color: #ffffff;                /* Màu chữ bên trong nút là màu trắng */
+    text-decoration: none;         /* Xóa bỏ đường gạch chân mặc định của thẻ liên kết */
+    font-weight: bold;             /* Làm đậm chữ trên nút */
+    border-radius: 6px;            /* Bo tròn góc nút cho mềm mại */
+    text-align: center;            /* Căn chữ ra giữa nút */
+    width: fit-content;            /* Thắt độ rộng nút vừa khít theo chiều dài của chữ */
+    transition: background-color 0.3s; /* Tạo hiệu ứng mượt mà (0.3 giây) khi thay đổi màu nút */
+}
+
+/* Hiệu ứng khi rê chuột vào nút */
+.btn-back:hover {
+    background-color: #2980b9;     /* Đổi sang màu xanh dương đậm hơn khi người dùng di chuột qua */
+}
+
+/* 6. GIAO DIỆN TRÊN ĐIỆN THOẠI (RESPONSIVE) */
+@media (max-width: 768px) {        /* Khi màn hình nhỏ hơn hoặc bằng 768px (Điện thoại/Máy tính bảng) */
+    #container {
+        flex-direction: column;    /* Chuyển từ xếp hàng ngang thành xếp hàng dọc (Ảnh nằm trên, Chữ nằm dưới) */
+        padding: 20px;             /* Thu nhỏ khoảng cách đệm lại cho đỡ chiếm diện tích */
+        gap: 20px;                 /* Giảm khoảng cách giữa các phần tử xuống còn 20px */
+    }
+    
+    #ten {
+        font-size: 26px;           /* Thu nhỏ chữ tên sản phẩm lại một chút cho vừa màn hình nhỏ */
+    }
+}

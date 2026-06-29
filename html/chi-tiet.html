@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html lang="vi">
+<head>
+    <title>Trang thông tin sản phẩm chi tiết</title>  
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Rất quan trọng cho điện thoại -->
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/stylechitiet.css">
+</head>
+    
+<body>
+    <div id="container"> 
+        <!-- Cột 1: Hình ảnh -->
+        <div class="product-image">
+            <img src="" alt="" id="image">
+        </div>
+        
+        <!-- Cột 2: Thông tin -->
+        <div class="product-info">
+            <h1 id="ten"></h1>
+            <h2 id="gia"></h2>
+            <!-- p để chữ mô tả dài dễ đọc hơn -->
+            <p id="mota_dai"></p>
+            
+            <a href="../index.html" class="btn-back">Quay lại trang chủ</a>
+        </div>
+    </div>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id'); 
+        const foundProduct = product.find(obj => obj.id === productId);
+
+        if (foundProduct) {
+            document.getElementById('ten').innerHTML = foundProduct.ten;
+            document.getElementById('gia').innerHTML = foundProduct.gia;
+            document.getElementById('mota_dai').innerHTML = foundProduct.mota_dai; 
+
+            const imgTag = document.getElementById('image');
+            imgTag.src = foundProduct.img;
+            imgTag.alt = foundProduct.alt;
+        } else {
+            document.getElementById('container').innerHTML = "<h3>Không tìm thấy sản phẩm này!</h3>"; 
+        }
+    </script>
+</body> 
+</html>
