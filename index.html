@@ -15,23 +15,30 @@
 </head>
         
     <body>
-       <div class="container main-box">
-            
-             <div id="list" class="row g-3">
-               
-                    <div class="banner">
+     
+        <div class="container main-box">
+                <!-- Banner -->
+                <div class="banner">
                         <h2>SHOP MỸ PHẨM DUY STORE</h2>
                         <h1>CHUYÊN GIỚI THIỆU MỸ PHẨM CHÍNH HÃNG</h1>
                         <h3>HOTLINE: 0334054617</h3>
                         <h3>EMAIL: duystore@gmail.com</h3>
-                    </div>
-                        
-             </div>
+                </div>
+              
+                <!-- THÊM THANH TÌM KIẾM VÀO ĐÂY -->
+                <div class="col-12 my-3 d-flex justify-content-center">
+                            <input type="text" id="search-input" class="form-control w-50 search-box" placeholder="Nhập tên sản phẩm cần tìm...">
+                </div>
+                            
+                <div id="list" class="row g-3">
+                    <!-- Các sản phẩm sẽ được load vào đây bằng JavaScript -->
+                </div>
         </div>
 
-<!-- Gọi hàm loadAllProducts để tạo tất cả các sản phẩm từ mảng product -->
-        <script>
-            loadAllProducts(product);
-        </script>
+                <script>
+                    loadAllProducts(product);
+                    // Gọi hàm kích hoạt tính năng tìm kiếm sau khi load sản phẩm
+                    initSearch();
+                </script>
     </body> 
-    </html>
+</html>

@@ -76,6 +76,7 @@
         const list = document.getElementById("list"); 
         if (!list) return; // Bảo vệ code không bị lỗi nếu trang không có thẻ #list
 
+        // Tạo phần tử cha chứa sản phẩm
         const item = document.createElement("div");
         item.setAttribute("class","col-12 col-sm-6 col-lg-4");
         item.innerHTML = "";
@@ -138,3 +139,26 @@
         }
     }
 
+
+   // Hàm xử lý tìm kiếm sản phẩm (Đã sửa lỗi xóa nhầm thẻ cha)
+    function initSearch() {
+    const searchInput = document.getElementById("search-input");
+    const list = document.getElementById("list");
+
+    if (!searchInput || !list) return;
+
+    searchInput.addEventListener("input", function () {
+        const keyword = searchInput.value.trim().toLowerCase(); // Lấy từ khóa và chuyển thành chữ thường
+
+        // 1. Xóa sạch các sản phẩm cũ đang hiển thị bên trong thẻ #list một cách an toàn
+        list.innerHTML = "";
+
+        // 2. Lọc sản phẩm theo tên
+        const filteredProducts = product.filter(function (item) {
+            return item.ten.toLowerCase().includes(keyword);
+        });
+
+        // 3. Hiển thị các sản phẩm đã lọc vào lại thẻ #list
+        loadAllProducts(filteredProducts);
+    });
+}
