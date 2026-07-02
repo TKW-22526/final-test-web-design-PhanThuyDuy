@@ -10,9 +10,9 @@
 
 #container{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    justify-content: center;/* Căn giữa theo chiều dọc */
+    align-items: center;  /* Căn giữa theo chiều ngang */
     background-color: #ffffff;
     padding: 20px;
 
@@ -32,7 +32,7 @@ body{
 }
 
 .banner{
-    background:#7770ff;
+    background:#7a66ff;
     color:rgb(255, 255, 255);
     text-align:center;
     padding:30px;

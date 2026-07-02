@@ -1,44 +1,295 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <title> Trang số thong tin san pham day du </title>  
-    <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-            
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Cosmetic</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleindex.css">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+        <script src="js/lib.js"></script>
 </head>
-        
-    <body>
-     
-        <div class="container main-box">
-                <!-- Banner -->
-                <div class="banner">
-                        <h2>SHOP MỸ PHẨM DUY STORE</h2>
-                        <h1>CHUYÊN GIỚI THIỆU MỸ PHẨM CHÍNH HÃNG</h1>
-                        <h3>HOTLINE: 0334054617</h3>
-                        <h3>EMAIL: duystore@gmail.com</h3>
-                </div>
-              
-                <!-- THÊM THANH TÌM KIẾM VÀO ĐÂY -->
-                <div class="col-12 my-3 d-flex justify-content-center">
-                            <input type="text" id="search-input" class="form-control w-50 search-box" placeholder="Nhập tên sản phẩm cần tìm...">
-                </div>
-                            
-                <div id="list" class="row g-3">
-                    <!-- Các sản phẩm sẽ được load vào đây bằng JavaScript -->
+
+<body>
+
+    <!--================ HEADER TOP ================-->
+
+    <div class="top-header">
+
+        <div class="container">
+
+            <div class="top-left">
+                <span>📞 Hotline: 0123 456 789</span>
+                <span>|</span>
+                <span>✉ Email: support@beauty.com</span>
+            </div>
+
+            <div class="top-right">
+                <a href="/html/dang-ky.html">Đăng ký</a>
+                <a href="/html/dang-nhap.html">Đăng nhập</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--================ MENU ================-->
+
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+                BEAUTY
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a class="active" href="index.html" target="_blank">Trang chủ</a></li>
+
+                    <li><a href="/html/gioi-thieu.html" target="_blank">Giới thiệu</a></li>
+
+                    <li><a href="/html/san-pham.html" target="_blank">Sản phẩm</a></li>
+
+                    <li><a href="/html/lien-he.html" target="_blank">Liên hệ</a></li>
+
+                </ul>
+
+            </nav>
+                 <div class="menu-icon">
+
+                        <div class="search-box">
+
+                            <input
+                                type="text"
+                                id="search-input"
+                                placeholder="Nhập tên sản phẩm..."
+                            >
+
+                            <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
+
+                        </div>
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
                 </div>
         </div>
 
-                <script>
-                    loadAllProducts(product);
-                    // Gọi hàm kích hoạt tính năng tìm kiếm sau khi load sản phẩm
-                    initSearch();
-                </script>
-    </body> 
+    </header>
+
+
+    <!--================ BANNER ================-->
+
+    <section class="banner">
+
+        <!-- Banner hình ảnh-->
+        <div class="banner-image">
+            <img src="/assets/images/anhnen.jpg" alt="Banner">
+        </div>
+        <!-- Nội dung banner -->
+        <div class="banner-content">
+
+            <h1>Beauty Collection</h1>
+
+            <p>
+                Nơi tôn vinh vẻ đẹp tự nhiên của bạn
+            </p>
+
+            <button>Xem sản phẩm</button>
+
+        </div>
+
+    </section>
+
+
+
+    <!--================ DANH MỤC NỔI BẬT ================-->
+
+    <section class="category">
+
+        <div class="container">
+
+            <div class="category-box">
+
+                <div class="image-placeholder">
+                    <img src ="/assets/images/anhtrangdiem.jpg" alt="Trang điểm">
+                </div>
+
+                <h3>Trang điểm</h3>
+
+            </div>
+
+            <div class="category-box">
+
+                <div class="image-placeholder">
+                    <img src ="/assets/images/mypham.jpg" alt="Chăm sóc da">
+                </div>
+
+                <h3>Chăm sóc da</h3>
+
+            </div>
+
+            <div class="category-box">
+
+                <div class="image-placeholder">
+                    <img src ="/assets/images/nuochoa.jpg" alt="Nước hoa">
+                </div>
+
+                <h3>Nước hoa</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--================ SẢN PHẨM NỔI BẬT ================-->
+
+    <section class="product"> 
+
+        <h2>SẢN PHẨM NỔI BẬT</h2>
+
+         <div class="container" id="list">
+
+            <!-- Các sản phẩm sẽ được load vào đây bằng JavaScript -->
+        </div>
+
+    </section>
+    
+    <!--================ KHUYẾN MÃI ================-->
+
+    <section class="promotion">
+
+        <div class="promotion-image">
+
+            Banner khuyến mãi
+
+        </div>
+
+    </section>
+
+
+
+    <!--================ TIN TỨC ================-->
+
+    <section class="news">
+
+        <h2>TIN TỨC LÀM ĐẸP</h2>
+
+        <div class="container">
+
+            <div class="news-card">
+
+                <div class="news-image">
+
+                    Hình ảnh
+
+                </div>
+
+                <h3>Tiêu đề bài viết</h3>
+
+                <p>
+                    Nội dung giới thiệu ngắn...
+                </p>
+
+            </div>
+
+            <div class="news-card">
+
+                <div class="news-image">
+
+                    Hình ảnh
+
+                </div>
+
+                <h3>Tiêu đề bài viết</h3>
+
+                <p>
+                    Nội dung giới thiệu ngắn...
+                </p>
+
+            </div>
+
+            <div class="news-card">
+
+                <div class="news-image">
+
+                    Hình ảnh
+
+                </div>
+
+                <h3>Tiêu đề bài viết</h3>
+
+                <p>
+                    Nội dung giới thiệu ngắn...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--================ FOOTER ================-->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-col">
+
+                <h3>Beauty Cosmetic</h3>
+
+                <p>
+                    Website giới thiệu và kinh doanh mỹ phẩm.
+                </p>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>Liên hệ</h3>
+
+                <p>Hotline: 0123 456 789</p>
+
+                <p>Email: support@beauty.com</p>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>Theo dõi</h3>
+
+                <p>Facebook</p>
+
+                <p>Instagram</p>
+
+                <p>TikTok</p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 Beauty Cosmetic. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+
 </html>

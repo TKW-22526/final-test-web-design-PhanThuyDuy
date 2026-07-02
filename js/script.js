@@ -68,6 +68,22 @@
         lienket: "../html/chi-tiet.html",
         img: "../assets/images/matnacocoon.jpg",
         alt: "Mặt nạ đất sét cocoon"
+    
+    },
+    {
+        id: "6",
+        ten: "Sữa rửa mặt CeraVe Foaming",
+        gia: "380k/1 chai", 
+        mota: `Làm sạch da lý tưởng cho da thường đến da dầu, kể cả da nhạy cảm`, 
+        mota_dai: `Sữa rửa mặt CeraVe Foaming Facial Cleanser là giải pháp làm sạch tối ưu:
+        - Được nghiên cứu và phát triển bởi các bác sĩ da liễu hàng đầu tại Mỹ.
+        - Được các chuyên gia khuyên dùng hằng ngày nhờ độ dịu nhẹ, an toàn tuyệt đối cho da.
+        - Mang lại khả năng làm sạch da lý tưởng cho phân khúc da từ da thường đến da dầu.
+        - Công thức lành tính, phù hợp cho cả những làn da nhạy cảm, dễ kích ứng nhất.
+        - Luôn nằm trong top những dòng sữa rửa mặt bán chạy nhất tại các trang phân phối mỹ phẩm uy tín.`,
+        lienket: "../html/chi-tiet.html",
+        img: "../assets/images/srmcerave.jpg",
+        alt: "Sữa rửa mặt CeraVe Foaming"
     }
 ];
 
@@ -78,7 +94,7 @@
 
         // Tạo phần tử cha chứa sản phẩm
         const item = document.createElement("div");
-        item.setAttribute("class","col-12 col-sm-6 col-lg-4");
+        item.setAttribute("class","col-12 col-sm-6 col-lg-4"); 
         item.innerHTML = "";
         item.classList.add("product-card");
         // Tạo phần tử chứa hình ảnh
@@ -140,7 +156,7 @@
     }
 
 
-   // Hàm xử lý tìm kiếm sản phẩm (Đã sửa lỗi xóa nhầm thẻ cha)
+   // Hàm xử lý tìm kiếm sản phẩm 
     function initSearch() {
     const searchInput = document.getElementById("search-input");
     const list = document.getElementById("list");
