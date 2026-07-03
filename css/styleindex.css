@@ -78,7 +78,7 @@ header .container{
 }
 
 .logo{
-    font-size:30px;
+    font-size:40px;
     font-weight:bold;
     color:#ff4d88;
     letter-spacing:2px;
@@ -96,7 +96,7 @@ nav ul{
 nav ul li a{
     color:white;
     transition:.3s;
-    font-size:15px;
+    font-size:24px;
 }
 
 nav ul li a:hover,
@@ -110,7 +110,8 @@ nav ul li a.active{
 
 .menu-icon{
     display:flex;
-    gap:20px;
+    gap: 35px;
+    align-items:center;
     font-size:22px;
     cursor:pointer;
 }
@@ -121,53 +122,49 @@ nav ul li a.active{
 
 /* ===== SEARCH ===== */
 
-.search-box{
-    display:flex;
-    align-items:center;
-    position:relative;
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Tạo khoảng cách nhỏ giữa ô nhập và icon kính lúp */
 }
 
-#search-btn{
-    cursor:pointer;
-    font-size:22px;
-    color:white;
-    transition:.3s;
+#search-input {
+    /* Loại bỏ absolute để nó hiển thị tự nhiên trên hàng */
+    position: relative;
+    top: 0;
+    transform: none;
+    
+    /* Hiển thị sẵn với kích thước cố định */
+    width: 300px; 
+    opacity: 1;
+    
+    padding: 6px 12px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    outline: none;
+    transition: .3s;
+    background: #5d5d5d; /* Đổi nền tối một chút để hợp với thanh header màu đen */
+    color: white;
 }
 
-#search-btn:hover{
-    color:#ff4d88;
+#search-input::placeholder {
+    color: #aaa;
 }
 
-#search-input{
-
-    width:0;
-
-    opacity:0;
-
-    padding:10px 0;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:30px;
-
-    transition:.4s;
-
-    margin-right:10px;
+#search-input:focus {
+    border-color: #ff4d88; /* Đổi màu viền khi click vào gõ chữ */
+    background: #333;
 }
 
-/* Khi mở */
+#search-btn {
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    transition: .3s;
+}
 
-.search-box.active #search-input{
-
-    width:220px;
-
-    opacity:1;
-
-    padding:10px 15px;
-
-    border:1px solid #ddd;
+#search-btn:hover {
+    color: #ff4d88;
 }
 
 /* ==========================
@@ -395,74 +392,80 @@ nav ul li a.active{
 }
 
 /* ==========================
-   PROMOTION
+   PROMOTION: Khuyến mãi 
 ========================== */
 
-.promotion{
-    padding:70px 0;
+.promotion-image {
+    width: 90%;
+    max-width: 1200px;
+    height: auto; /*  đổi thành auto để khung co giãn theo ảnh */
+    margin: auto;
+    overflow: hidden; /* Ẩn phần ảnh thừa nếu bị tràn */
+    border-radius: 8px; /* Thêm bo góc nhẹ cho đẹp */
 }
 
-.promotion-image{
-    width:90%;
-    max-width:1200px;
-    height:300px;
-    margin:auto;
-    background:#cccccc;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    color:#666;
+/* Thêm mới đoạn này để ảnh khít và đẹp với khung */
+.promotion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh tự lấp đầy khung mà không bị méo */
+    display: block;
 }
 
 /* ==========================
-   NEWS
+   NEWS: Tin tức
 ========================== */
-
-.news{
-    padding:80px 0;
-    background:white;
+/* Đảm bảo khung chứa ảnh hoạt động chính xác */
+.news-image {
+    height: 600px;
+    background: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    overflow: hidden; /* Giữ ảnh không tràn ra ngoài đè chữ */
 }
 
-.news h2{
-    text-align:center;
-    margin-bottom:50px;
+/* Thêm thuộc tính cho thẻ img bên trong news-image */
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh tự co giãn vừa vặn, không méo, không đè chữ */
+    display: block;
 }
 
-.news .container{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+/* Định dạng lại phần tiêu đề bài viết cho đẹp mắt và rõ ràng */
+.news-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.4;
 }
 
-.news-card{
-    background:#fafafa;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
+/* Đổi màu chữ cho thẻ a trong tiêu đề để nổi bật và đổi màu khi hover */
+.news-card h3 a {
+    color: #222;
+   font-size : 30px;
+    transition: 0.3s; /* Thêm hiệu ứng chuyển màu khi hover */
+}
+/* Thêm lớp CSS mới cho tiêu đề h2 của phần tin tức */
+.new-h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+}
+.news-card h3 a:hover {
+    color: #ff4d88; /* Màu hồng đồng bộ với giao diện chính */
 }
 
-.news-card:hover{
-    transform:translateY(-8px);
-}
-
-.news-image{
-    height:220px;
-    background:#d8d8d8;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#666;
-}
-
-.news-card h3{
-    padding:20px 20px 10px;
-}
-
-.news-card p{
-    padding:0 20px 20px;
-    line-height:1.6;
+.news-card p {
+    padding: 0 20px 20px;
+    line-height: 1.6;
+    color: #666; /* Màu chữ mô tả nhẹ nhàng hơn */
+    font-size: 24px;
 }
 
 /* ==========================

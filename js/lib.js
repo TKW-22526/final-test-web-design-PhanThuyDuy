@@ -162,23 +162,6 @@ function initSearch() {
     });
 
 }
-// Bấm vào nút tìm kiếm để hiển thị ô nhập liệu
-const searchBtn = document.getElementById("search-btn");
-const searchBox = document.querySelector(".search-box");
-
-if(searchBtn){
-
-    searchBtn.addEventListener("click",function(){
-
-        searchBox.classList.toggle("active");
-
-        if(searchBox.classList.contains("active")){
-            document.getElementById("search-input").focus();
-        }
-
-    });
-
-}
 
 // ===========================
 // KHỞI TẠO
