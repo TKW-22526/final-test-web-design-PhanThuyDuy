@@ -136,31 +136,53 @@ function loadAllProducts(arr) {
 
 }
 
-
-// ===========================
-// TÌM KIẾM
-// ===========================
+// ==================================================
+// TÌM KIẾM KHI ẤM ENTER HOẶC CLICK ICON KÍNH LÚP
+// ==================================================
 
 function initSearch() {
-
-    const searchInput = document.getElementById("search-input");
-
+    const searchInput = document.getElementById("search-input"); // Ô input tìm kiếm
+    const searchBtn = document.getElementById("search-btn"); // Thẻ chứa icon kính lúp
+    
     if (!searchInput) return;
 
-    searchInput.addEventListener("input", function() {
-
-        const keyword = this.value.trim().toLowerCase();
-
-        const result = product.filter(function(item){
-
-            return item.ten.toLowerCase().includes(keyword);
-
-        });
-
-        loadAllProducts(result);
-
+    // 1. Tự động cuộn xuống phần sản phẩm khi người dùng bấm vào ô tìm kiếm
+    searchInput.addEventListener("focus", function() {
+        const productSection = document.querySelector(".product");
+        if (productSection) {
+            productSection.scrollIntoView({ 
+                behavior: "smooth", 
+                block: "start" 
+            });
+        }
     });
 
+    // Hàm thực hiện xử lý lọc sản phẩm
+    function executeSearch() {
+        const keyword = searchInput.value.trim().toLowerCase();
+
+        const result = product.filter(function(item){
+            return item.ten.toLowerCase().includes(keyword);
+        });
+
+        // Chỉ hiển thị các sản phẩm thỏa mãn sau khi nhấn Enter/Click
+        loadAllProducts(result);
+    }
+
+    // 2. Lắng nghe sự kiện phím Enter khi đang gõ trong ô input
+    searchInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Ngăn chặn hành động tải lại trang mặc định nếu có Form
+            executeSearch(); // Chạy hàm tìm kiếm
+        }
+    });
+
+    // 3. Lắng nghe sự kiện khi người dùng click trực tiếp vào nút kính lúp (nếu có)
+    if (searchBtn) {
+        searchBtn.addEventListener("click", function() {
+            executeSearch();
+        });
+    }
 }
 
 // ===========================

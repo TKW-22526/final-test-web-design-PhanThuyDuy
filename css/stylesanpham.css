@@ -64,3 +64,22 @@ body{
     border-color: #7770ff;
     box-shadow: 0 0 8px rgba(119, 112, 255, 0.3);
 }
+
+/* Custom nút quay lại màu hồng nhạt */
+.btn-back-pink {
+    background-color: #fcdce2; /* Màu nền hồng nhạt dịu dàng */
+    color: #d63384;            /* Màu chữ/icon hồng đậm để dễ nhìn */
+    border: 1px solid #fbc4cf; /* Viền hồng */
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 20px;       /* Bo tròn góc cho nữ tính */
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi rê chuột vào (Hover) */
+.btn-back-pink:hover {
+    background-color: #d63384; /* Đổi thành nền hồng đậm */
+    color: #ffffff;            /* Chữ chuyển sang trắng */
+    border-color: #d63384;
+    box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2); /* Đổ bóng nhẹ */
+}
