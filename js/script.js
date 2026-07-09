@@ -165,6 +165,19 @@
 
         // Hàm loadAllProducts để tạo tất cả các sản phẩm từ mảng objArray
     function loadAllProducts(objArray) {
+        const list = document.getElementById("list");
+        if (!list) return;
+
+        list.innerHTML = "";
+// Nếu không có sản phẩm nào thỏa mãn, hiển thị thông báo "Không tìm thấy sản phẩm phù hợp."
+        if (!objArray || objArray.length === 0) {
+            const emptyState = document.createElement("div");
+            emptyState.className = "col-12 empty-state";
+            emptyState.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
+            list.appendChild(emptyState);
+            return;
+        }
+
         for(let i = 0; i < objArray.length; i++) {   
             createItem(objArray[i]); 
         }
@@ -174,22 +187,36 @@
    // Hàm xử lý tìm kiếm sản phẩm 
     function initSearch() {
     const searchInput = document.getElementById("search-input");
-    const list = document.getElementById("list");
+    const searchBtn = document.getElementById("search-btn");
+    const productSection = document.querySelector(".products-section") || document.querySelector(".product");
+    // Bảo vệ code không bị lỗi nếu trang không có thẻ #search-input
+    if (!searchInput) return;
 
-    if (!searchInput || !list) return;
-
-    searchInput.addEventListener("input", function () {
-        const keyword = searchInput.value.trim().toLowerCase(); // Lấy từ khóa và chuyển thành chữ thường
-
-        // 1. Xóa sạch các sản phẩm cũ đang hiển thị bên trong thẻ #list một cách an toàn
-        list.innerHTML = "";
-
-        // 2. Lọc sản phẩm theo tên
+    searchInput.addEventListener("focus", function () {
+        if (productSection) {
+            productSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+    // Hàm thực hiện tìm kiếm sản phẩm dựa trên từ khóa
+    function executeSearch() {
+        const keyword = searchInput.value.trim().toLowerCase();
         const filteredProducts = product.filter(function (item) {
             return item.ten.toLowerCase().includes(keyword);
         });
 
-        // 3. Hiển thị các sản phẩm đã lọc vào lại thẻ #list
         loadAllProducts(filteredProducts);
+    }
+    // Thêm sự kiện khi người dùng nhấn Enter trong ô tìm kiếm
+    searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            executeSearch();
+        }
     });
+
+    if (searchBtn) {
+        searchBtn.addEventListener("click", function () {
+            executeSearch();
+        });
+    }
 }

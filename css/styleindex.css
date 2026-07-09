@@ -392,6 +392,21 @@ nav ul li a.active{
 }
 
 /* ==========================
+   EMPTY STATE
+========================== */
+
+.empty-state {
+    grid-column: 1 / -1;
+    background: #fff;
+    border: 1px dashed #ff4d88;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    color: #d63384;
+    font-weight: bold;
+}
+
+/* ==========================
    PROMOTION: Khuyến mãi 
 ========================== */
 
