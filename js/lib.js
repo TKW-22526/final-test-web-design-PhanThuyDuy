@@ -11,7 +11,8 @@ const product = [
         mota_dai: `Sữa tắm dưỡng da cao cấp chứa Vitamin E và các tinh chất thiên nhiên.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/suatam.jpg",
-        alt: "Sữa tắm"
+        alt: "Sữa tắm",
+        category: "my-pham"
     },
 
     {
@@ -22,7 +23,8 @@ const product = [
         mota_dai: `Sữa rửa mặt tạo bọt dịu nhẹ, phù hợp mọi loại da.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/suarm.jpg",
-        alt: "Sữa rửa mặt"
+        alt: "Sữa rửa mặt",
+        category: "my-pham"
     },
 
     {
@@ -33,7 +35,8 @@ const product = [
         mota_dai: `Nước tẩy trang Micellar giúp làm sạch hiệu quả mà không gây khô da.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/nuoctt.jpg",
-        alt: "Nước tẩy trang"
+        alt: "Nước tẩy trang",
+        category: "do-trang-diem"
     },
 
     {
@@ -44,7 +47,8 @@ const product = [
         mota_dai: `Chiết xuất nha đam giúp giữ ẩm và làm sạch hiệu quả.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/nuocrt.jpg",
-        alt: "Nước rửa tay"
+        alt: "Nước rửa tay",
+        category: "my-pham"
     },
 
     {
@@ -55,7 +59,8 @@ const product = [
         mota_dai: `Mặt nạ đất sét Cocoon từ nguyên liệu thuần chay.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/matnacocoon.jpg",
-        alt: "Mặt nạ Cocoon"
+        alt: "Mặt nạ Cocoon",
+        category: "my-pham"
     },
 
     {
@@ -66,7 +71,19 @@ const product = [
         mota_dai: `Sữa rửa mặt CeraVe được các bác sĩ da liễu khuyên dùng.`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/srmcerave.jpg",
-        alt: "Sữa rửa mặt CeraVe"
+        alt: "Sữa rửa mặt CeraVe",
+        category: "my-pham"
+    },
+    {
+        id: "7",
+        ten: "Nước hoa Avon Cherish the Moment",
+        gia: "1.104.000đ",
+        mota: "Hương thơm hoa cỏ trái cây ngọt ngào và lôi cuốn.",
+        mota_dai: `Nước hoa Avon Cherish the Moment mang đến hương thơm nữ tính, dịu dàng và lưu hương lâu.`,
+        lienket: "html/chi-tiet.html",
+        img: "assets/images/nuochoa1.jpg",
+        alt: "Nước hoa Avon Cherish the Moment",
+        category: "nuoc-hoa"
     }
 ];
 
@@ -145,6 +162,41 @@ function loadAllProducts(arr) {
 }
 
 // ==================================================
+// LỌC DỰA TRÊN DANH MỤC
+// ==================================================
+
+function updateActiveCategoryButton(category) {
+    const buttons = document.querySelectorAll(".category-btn");
+    buttons.forEach(function(button) {
+        button.classList.toggle("active", button.dataset.category === category);
+    });
+}
+
+function applyCategoryFilter(category) {
+    if (category === "all") {
+        loadAllProducts(product);
+    } else {
+        const filtered = product.filter(function(item) {
+            return item.category === category;
+        });
+        loadAllProducts(filtered);
+    }
+    updateActiveCategoryButton(category);
+}
+
+function initCategoryFilter() {
+    const buttons = document.querySelectorAll(".category-btn");
+    if (!buttons.length) return;
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const category = button.dataset.category;
+            applyCategoryFilter(category);
+        });
+    });
+}
+
+// ==================================================
 // TÌM KIẾM KHI ẤM ENTER HOẶC CLICK ICON KÍNH LÚP
 // ==================================================
 
@@ -175,6 +227,7 @@ function initSearch() {
 
         // Chỉ hiển thị các sản phẩm thỏa mãn sau khi nhấn Enter/Click
         loadAllProducts(result);
+        updateActiveCategoryButton("all");
     }
 
     // 2. Lắng nghe sự kiện phím Enter khi đang gõ trong ô input
@@ -196,8 +249,8 @@ function initSearch() {
 // ===========================
 // KHỞI TẠO
 // ===========================
-// Khi DOM được tải xong, hiển thị 4 sản phẩm đầu tiên và khởi tạo chức năng tìm kiếm
 document.addEventListener("DOMContentLoaded", function () {
     loadAllProducts(product.slice(0,4));
     initSearch();
+    initCategoryFilter();
 }); 

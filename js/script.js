@@ -1,108 +1,65 @@
-    const product = [
-    {
-        id: "1",
-        ten: "Sữa tắm dưỡng da",
-        gia: "180.000đ/1chai",
-        mota: "Giúp làn da mềm mịn, hương thơm quyến rũ",
-        mota_dai: `Sữa tắm dưỡng da cao cấp chứa các tinh chất từ thiên nhiên và bổ sung Vitamin E. 
-        Sản phẩm mang lại những công dụng vượt trội:
-        - Giúp làn da mịn màng, cung cấp độ ẩm sâu suốt 24 giờ.
-        - Hương thớm quyến rũ, nhẹ nhàng lưu lại trên da sau khi tắm.
-        - Phù hợp với mọi loại da, hoàn toàn không gây kích ứng.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/suatam.jpg",
-        alt: "Sữa tắm"
-    },
+// Biến toàn cục để lưu trữ dữ liệu sản phẩm
+let product = [];
 
-    {
-        id: "2",
-        ten: "Sữa rửa mặt",
-        gia: "69.000đ/1chai",
-        mota: "Sạch sâu da mặt của bạn mền mịn hơn  ",
-        mota_dai: `Sữa rửa mặt tạo bọt dịu nhẹ giúp loại bỏ bụi bẩn, dầu thừa và lớp trang điểm nhẹ:
-        - Làm sạch sâu bên trong lỗ chân lông mà không gây cảm giác khô căng.
-        - Giúp cân bằng độ pH tự nhiên, nuôi dưỡng cấu trúc da từ sâu bên trong.
-        - Sử dụng đều đặn mỗi ngày 2 lần vào buổi sáng và buổi tối để có làn da sáng khỏe.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/suarm.jpg",
-        alt: "sữa rửa mặt"
-    },
-    
-    {
-        id: "3",
-        ten: "Nước tẩy trang",
-        gia: "200.000đ/1chai",
-        mota: "Tẩy sạch bụi bẩn trên da mặt ",
-        mota_dai: `Nước tẩy trang công nghệ Micellar tiên tiến giúp hút sạch cặn trang điểm và bụi mịn PM2.5:
-        - Không chứa cồn, không chứa hương liệu nhân tạo, cực kỳ an toàn cho vùng mắt và môi.
-        - Giúp lỗ chân lông thông thoáng, ngăn ngừa nguy cơ hình thành mụn ẩn.
-        - Mang lại cảm giác tươi mát, ẩm mượt ngay sau khi lau sạch bằng bông tẩy trang.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/nuoctt.jpg",
-        alt: "Nước tẩy trang"
-    },
-    
-    {
-        id: "4",
-        ten: "Nước rửa tay",
-        gia: "39.000đ/1chai",
-        mota: "Sạch vi khuẩn bám trên tay bạn ",
-        mota_dai: `Nước rửa tay diệt khuẩn chuyên dụng giúp bảo vệ sức khỏe cho cả gia đình bạn:
-        - Tiêu diệt đến 99.9% vi khuẩn gây hại bám trên bề mặt da tay khi tiếp xúc với môi trường.
-        - Chiết xuất nha đam và trà xanh giúp giữ ẩm tốt, không làm bong tróc hay khô ráp da tay.
-        - Hương thơm tươi mát giúp khử mùi thức ăn, mùi tanh hải sản vô cùng hiệu quả.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/nuocrt.jpg",
-        alt: "Nước rửa tay"
-    },
-    
-    {
-        id: "5",
-        ten: "Mặt nạ đất sét cocoon ",
-        gia: "150.000đ/1 hũ",
-        mota: `Giúp da mặt bạn sạch sâu, mịn màng hơn`, 
-        mota_dai: `Mặt nạ đất sét Cocoon từ nguồn nguyên liệu thuần chay 100% Việt Nam:
-        - Thành phần đất sét trắng giúp hấp thụ dầu thừa, làm sạch các sợi bã nhờn cứng đầu ở vùng mũi.
-        - Kết hợp chiết xuất bí đao giúp làm dịu các nốt mụn sưng viêm, hỗ trợ gom cồi mụn nhanh chóng.
-        - Cải thiện tình trạng bề mặt da sần sùi, mang lại làn da sáng mịn và đều màu hơn chỉ sau 2 tuần sử dụng`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/matnacocoon.jpg",
-        alt: "Mặt nạ đất sét cocoon"
-    
-    },
-    {
-        id: "6",
-        ten: "Sữa rửa mặt CeraVe Foaming",
-        gia: "380.000đ/1 chai", 
-        mota: `Làm sạch da lý tưởng cho da thường đến da dầu, kể cả da nhạy cảm`, 
-        mota_dai: `Sữa rửa mặt CeraVe Foaming Facial Cleanser là giải pháp làm sạch tối ưu:
-        - Được nghiên cứu và phát triển bởi các bác sĩ da liễu hàng đầu tại Mỹ.
-        - Được các chuyên gia khuyên dùng hằng ngày nhờ độ dịu nhẹ, an toàn tuyệt đối cho da.
-        - Mang lại khả năng làm sạch da lý tưởng cho phân khúc da từ da thường đến da dầu.
-        - Công thức lành tính, phù hợp cho cả những làn da nhạy cảm, dễ kích ứng nhất.
-        - Luôn nằm trong top những dòng sữa rửa mặt bán chạy nhất tại các trang phân phối mỹ phẩm uy tín.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/srmcerave.jpg",
-        alt: "Sữa rửa mặt CeraVe Foaming"
-    },
-    {
-         id: "7", // Bạn có thể thay đổi số ID này tùy thuộc vào thứ tự trong mảng dữ liệu của bạn
-        ten: "Nước hoa Avon Cherish the Moment",
-        gia: "1.104.000đ/1 chai", // Bạn có thể tùy chỉnh lại mức giá mong muốn cho phù hợp
-        mota: `Hương thơm hoa cỏ trái cây ngọt ngào và lôi cuốn đến từng phút giây`, 
-        mota_dai: `Nước hoa nữ Avon Cherish the Moment là sự kết hợp hoàn hảo giữa nét quyến rũ và thanh lịch:
-        - Được lấy cảm hứng từ những khoảnh khắc hạnh phúc, rạng rỡ và trọn vẹn của phái đẹp.
-        - Sở hữu nốt hương ngọt ngào lôi cuốn từ hoa tulip, champagne hòa quyện cùng hoắc hương ấm áp.
-        - Mang lại trải nghiệm lưu hương tinh tế, thích hợp cho các buổi tiệc hay không gian hẹn hò lãng mạn.
-        - Thiết kế dáng chai bo tròn mềm mại kết hợp sắc hồng nữ tính, tôn lên vẻ đẹp sang trọng trên bàn trang điểm.
-        - Luôn là dòng sản phẩm được săn đón rộng rãi bởi những tín đồ yêu thích hương thơm dịu nhẹ, thanh khiết.`,
-        lienket: "../html/chi-tiet.html",
-        img: "../assets/images/nuochoa1.jpg", // Tên file ảnh banner nước hoa của bạn
-        alt: "Nước hoa Avon Cherish the Moment"
+async function loadProductsFromJson() {
+    try {
+        const response = await fetch("../js/Json.json"); // Đường dẫn đến file JSON chứa dữ liệu sản phẩm
+        if (!response.ok) throw new Error("Không thể tải dữ liệu sản phẩm");
+
+        const data = await response.json();// Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
+        product = Array.isArray(data) ? data : (data.products || []);// Kiểm tra xem dữ liệu có phải là mảng hay không, nếu không thì lấy thuộc tính "products" nếu có
+
+        if (typeof loadAllProducts === "function") {
+            loadAllProducts(product);
+        }
+        if (typeof initSearch === "function") {
+            initSearch();
+        }
+        if (typeof initCategoryFilter === "function") {
+            initCategoryFilter();
+        }
+
+        return product;
+    } catch (error) {
+        console.error("Lỗi khi tải dữ liệu sản phẩm:", error);
+        if (typeof loadAllProducts === "function") {
+            loadAllProducts([]);
+        }
+        return [];
     }
-];
+}
+// Hàm createItem để tạo một sản phẩm từ đối tượng obj
+function updateActiveCategoryButton(category) {
+    const buttons = document.querySelectorAll(".category-btn");
+    buttons.forEach(function(button) {
+        button.classList.toggle("active", button.dataset.category === category);
+    });
+}
+// Hàm applyCategoryFilter để lọc sản phẩm dựa trên danh mục
+function applyCategoryFilter(category) {
+    if (category === "all") {
+        loadAllProducts(product);
+    } else {
+        const filteredProducts = product.filter(function (item) {
+            return item.category === category;
+        });
+        loadAllProducts(filteredProducts);
+    }
+    updateActiveCategoryButton(category);
+}
+// Hàm initCategoryFilter để khởi tạo sự kiện cho các nút danh mục
+function initCategoryFilter() {
+    const buttons = document.querySelectorAll(".category-btn");
+    if (!buttons.length) return;
 
-        // Hàm createItem để tạo một sản phẩm từ đối tượng obj
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            applyCategoryFilter(button.dataset.category);
+        });
+    });
+}
+
+// Hàm createItem để tạo một sản phẩm từ đối tượng obj
         function createItem(obj) {
         const list = document.getElementById("list"); 
         if (!list) return; // Bảo vệ code không bị lỗi nếu trang không có thẻ #list

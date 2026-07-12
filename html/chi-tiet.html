@@ -31,21 +31,26 @@
     </div>
     
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id'); 
-        const foundProduct = product.find(obj => obj.id === productId);
+        async function renderProductDetail() {
+            const products = await loadProductsFromJson(); /* Lấy dữ liệu sản phẩm từ file JSON */
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const foundProduct = products.find(obj => obj.id === productId);
 
-        if (foundProduct) {
-            document.getElementById('ten').innerHTML = foundProduct.ten;
-            document.getElementById('gia').innerHTML = foundProduct.gia;
-            document.getElementById('mota_dai').innerHTML = foundProduct.mota_dai; 
+            if (foundProduct) {
+                document.getElementById('ten').innerHTML = foundProduct.ten;
+                document.getElementById('gia').innerHTML = foundProduct.gia;
+                document.getElementById('mota_dai').innerHTML = foundProduct.mota_dai;
 
-            const imgTag = document.getElementById('image');
-            imgTag.src = foundProduct.img;
-            imgTag.alt = foundProduct.alt;
-        } else {
-            document.getElementById('container').innerHTML = "<h3>Không tìm thấy sản phẩm này!</h3>"; 
+                const imgTag = document.getElementById('image');
+                imgTag.src = foundProduct.img;
+                imgTag.alt = foundProduct.alt;
+            } else {
+                document.getElementById('container').innerHTML = "<h3>Không tìm thấy sản phẩm này!</h3>";
+            }
         }
+
+        renderProductDetail();
     </script>
 </body> 
 </html>

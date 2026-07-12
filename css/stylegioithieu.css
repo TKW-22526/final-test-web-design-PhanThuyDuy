@@ -122,3 +122,69 @@
 .banner-content p{
     font-size:30px;
 }
+
+/* Top Brands Section CSS bổ sung */
+.top-brands {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.brand-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ff4f8b;
+    margin-bottom: 15px;
+}
+
+.brand-subtitle {
+    width: 70%;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    color: #666;
+    line-height: 28px;
+}
+
+.brand-card {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 18px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Giúp các card cao bằng nhau trên cùng một hàng */
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 79, 139, 0.12);
+    border-color: #ff4f8b;
+}
+
+.brand-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #fff0f5;
+    color: #ff4f8b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.brand-desc {
+    font-size: 15px;
+    line-height: 24px;
+    color: #777;
+    margin-bottom: 0;
+}
