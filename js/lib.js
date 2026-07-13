@@ -4,89 +4,116 @@
 
 const product = [
     {
-        id: "1",
-        ten: "Sữa tắm dưỡng da",
-        gia: "180.000đ",
-        mota: "Giúp làn da mềm mịn, hương thơm quyến rũ.",
-        mota_dai: `Sữa tắm dưỡng da cao cấp chứa Vitamin E và các tinh chất thiên nhiên.`,
+        id: "20", // Giữ nguyên ID gốc của SK-II trong database
+        ten: "Nước thần tinh chất dưỡng da SK-II Facial Treatment Essence",
+        gia: "1.950.000đ",
+        mota: "Nước thần tái tạo tế bào, dưỡng da căng mướt và chống lão hóa đỉnh cao.",
+        mota_dai: `Nước thần cao cấp SK-II Facial Treatment Essence chứa tinh chất huyền thoại Pitera...`,
         lienket: "html/chi-tiet.html",
-        img: "assets/images/suatam.jpg",
-        alt: "Sữa tắm",
+        img: "assets/images/SK-II.jpg",
+        alt: "Nước thần tinh chất dưỡng da SK-II Facial Treatment Essence",
         category: "my-pham"
     },
-
     {
-        id: "2",
-        ten: "Sữa rửa mặt",
-        gia: "69.000đ",
-        mota: "Làm sạch sâu, giúp da mềm mịn.",
-        mota_dai: `Sữa rửa mặt tạo bọt dịu nhẹ, phù hợp mọi loại da.`,
+        id: "28", // Giữ nguyên ID gốc của Armaf
+        ten: "Nước hoa Unisex Armaf Club De Nuit Untold",
+        gia: "1.350.000đ",
+        mota: "Hương thơm đẳng cấp, sang trọng đầy lôi cuốn phù hợp cho cả nam và nữ.",
+        mota_dai: `Nước hoa Unisex Armaf Club De Nuit Untold Eau de Parfum...`,
         lienket: "html/chi-tiet.html",
-        img: "assets/images/suarm.jpg",
-        alt: "Sữa rửa mặt",
-        category: "my-pham"
+        img: "assets/images/UnisexArmaf.jpg",
+        alt: "Nước hoa Unisex Armaf Club De Nuit Untold",
+        category: "nuoc-hoa"
     },
-
     {
-        id: "3",
-        ten: "Nước tẩy trang",
-        gia: "200.000đ",
-        mota: "Làm sạch bụi bẩn và lớp trang điểm.",
-        mota_dai: `Nước tẩy trang Micellar giúp làm sạch hiệu quả mà không gây khô da.`,
+        id: "14", // Giữ nguyên ID gốc của Nars
+        ten: "Kem nền Nars Natural Radiant Longwear Foundation",
+        gia: "1.150.000đ",
+        mota: "Kem nền che khuyết điểm cao, mỏng nhẹ và bền màu suốt 16 giờ.",
+        mota_dai: `Kem nền cao cấp Nars Natural Radiant Longwear Foundation đột phá...`,
         lienket: "html/chi-tiet.html",
-        img: "assets/images/nuoctt.jpg",
-        alt: "Nước tẩy trang",
+        img: "assets/images/Nars.jpg",
+        alt: "Kem nền Nars Natural Radiant Longwear Foundation",
         category: "do-trang-diem"
     },
-
     {
-        id: "4",
-        ten: "Nước rửa tay",
-        gia: "39.000đ",
-        mota: "Diệt khuẩn, bảo vệ đôi tay.",
-        mota_dai: `Chiết xuất nha đam giúp giữ ẩm và làm sạch hiệu quả.`,
+        id: "26", // Giữ nguyên ID gốc của Flamant Rose
+        ten: "Nước hoa nữ The Merchant of Venice Flamant Rose",
+        gia: "3.500.000đ",
+        mota: "Hương thơm quý phái, lãng mạn lấy cảm hứng từ loài chim hồng hạc.",
+        mota_dai: `Nước hoa niche xa xỉ The Merchant of Venice Flamant Rose Eau de Parfum...`,
         lienket: "html/chi-tiet.html",
-        img: "assets/images/nuocrt.jpg",
-        alt: "Nước rửa tay",
-        category: "my-pham"
+        img: "assets/images/TheMerchantOfVenice.jpg",
+        alt: "Nước hoa nữ The Merchant of Venice Flamant Rose",
+        category: "nuoc-hoa"
     },
-
     {
-        id: "5",
-        ten: "Mặt nạ đất sét Cocoon",
-        gia: "150.000đ",
-        mota: "Làm sạch sâu, hỗ trợ giảm mụn.",
-        mota_dai: `Mặt nạ đất sét Cocoon từ nguyên liệu thuần chay.`,
-        lienket: "html/chi-tiet.html",
-        img: "assets/images/matnacocoon.jpg",
-        alt: "Mặt nạ Cocoon",
-        category: "my-pham"
-    },
-
-    {
-        id: "6",
-        ten: "Sữa rửa mặt CeraVe",
-        gia: "380.000đ",
-        mota: "Làm sạch dịu nhẹ cho mọi loại da.",
-        mota_dai: `Sữa rửa mặt CeraVe được các bác sĩ da liễu khuyên dùng.`,
+        id: "22", // Giữ nguyên ID gốc của CeraVe
+        ten: "Sữa rửa mặt dạng gel CeraVe Foaming Cleanser",
+        gia: "395.000đ",
+        mota: "Sữa rửa mặt tạo bọt dịu nhẹ cho da thường đến da dầu giúp sạch sâu không khô căng.",
+        mota_dai: `Sữa rửa mặt cao cấp CeraVe Foaming Cleanser (Dung tích 473ml)...`,
         lienket: "html/chi-tiet.html",
         img: "assets/images/srmcerave.jpg",
-        alt: "Sữa rửa mặt CeraVe",
+        alt: "Sữa rửa mặt dạng gel CeraVe Foaming Cleanser",
         category: "my-pham"
     },
     {
-        id: "7",
-        ten: "Nước hoa Avon Cherish the Moment",
-        gia: "1.104.000đ",
-        mota: "Hương thơm hoa cỏ trái cây ngọt ngào và lôi cuốn.",
-        mota_dai: `Nước hoa Avon Cherish the Moment mang đến hương thơm nữ tính, dịu dàng và lưu hương lâu.`,
+        id: "21", // Giữ nguyên ID gốc của Skin Aqua
+        ten: "Kem chống nắng nâng tông Sunplay Skin Aqua Tone Up UV Essence",
+        gia: "185.000đ",
+        mota: "Chống nắng phổ rộng SPF50+ PA++++ bảo vệ da toàn diện và nâng tông tự nhiên.",
+        mota_dai: `Kem chống nắng Sunplay Skin Aqua Tone Up UV Essence SPF50+ PA++++...`,
         lienket: "html/chi-tiet.html",
-        img: "assets/images/nuochoa1.jpg",
-        alt: "Nước hoa Avon Cherish the Moment",
+        img: "assets/images/skinaqua.jpg",
+        alt: "Kem chống nắng nâng tông Sunplay Skin Aqua Tone Up UV Essence",
+        category: "my-pham"
+    },
+    {
+        id: "12", // Giữ nguyên ID gốc của Make Up For Ever
+        ten: "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
+        gia: "950.000đ",
+        mota: "Bảng màu triệt sắc và che khuyết điểm chuyên nghiệp cho lớp nền không tì vết.",
+        mota_dai: `Bảng tạo khối và che khuyết điểm chuyên nghiệp Make Up For Ever Ultra HD Underpainting Palette...`,
+        lienket: "html/chi-tiet.html",
+        img: "assets/images/MakeUpForEver.jpg",
+        alt: "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
+        category: "do-trang-diem"
+    },
+    {
+        id: "27", // Giữ nguyên ID gốc của Alien
+        ten: "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
+        gia: "2.850.000đ",
+        mota: "Hương thơm huyền biến, ma mị độc bản với nốt hương hoa nhài và hổ phách.",
+        mota_dai: `Nước hoa nữ cao cấp Thierry Mugler Alien Eau de Parfum...`,
+        lienket: "html/chi-tiet.html",
+        img: "assets/images/ThierryMugler.jpg",
+        alt: "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
         category: "nuoc-hoa"
+    },
+    {
+        id: "18", // Giữ nguyên ID gốc của L'Oreal
+        ten: "Nước tẩy trang L'Oreal Paris Micellar Water 3-in-1 Refreshing",
+        gia: "175.000đ",
+        mota: "L'Oreal Paris Micellar Water 3-in-1 Refreshing",
+        mota_dai: `Nước tẩy trang tươi mát L'Oreal Paris Micellar Water 3-in-1 Refreshing...`,
+        lienket: "html/chi-tiet.html",
+        img: "assets/images/nuoctt.jpg",
+        alt: "Nước tẩy trang L'Oreal Paris Micellar Water 3-in-1 Refreshing",
+        category: "my-pham"
+    },
+    {
+        id: "24", // Giữ nguyên ID gốc của Lifebuoy
+        ten: "Sữa tắm sạch khuẩn Lifebuoy Vitamin+ Bảo Vệ Vượt Trội 10",
+        gia: "185.000đ",
+        mota: "Sữa tắm hỗ trợ đề kháng da tự nhiên, bảo vệ khỏi 99,9% vi khuẩn.",
+        mota_dai: `Sữa tắm Lifebuoy Vitamin+ Bảo Vệ Vượt Trội 10...`,
+        lienket: "html/chi-tiet.html",
+        img: "assets/images/suatam.jpg",
+        alt: "Sữa tắm sạch khuẩn Lifebuoy Vitamin+ Bảo Vệ Vượt Trội 10",
+        category: "my-pham"
     }
 ];
-
 
 // ===========================
 // TẠO 1 SẢN PHẨM
