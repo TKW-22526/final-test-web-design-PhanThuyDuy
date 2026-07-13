@@ -147,9 +147,7 @@ function createItem(obj) {
                     Xem chi tiết
                 </a>
 
-                <a href="#" class="btn-buy">
-                    Mua ngay
-                </a>
+                
 
             </div>
 

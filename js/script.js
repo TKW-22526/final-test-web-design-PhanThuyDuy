@@ -97,23 +97,19 @@ function initCategoryFilter() {
         mota.setAttribute("class", "text-muted small mb-2");
         mota.innerHTML = obj.mota; 
         
-        // Tạo các nút "Xem chi tiết" và "Mua ngay"
+        // Tạo các nút "Xem chi tiết" 
         const lienket = document.createElement("a");
         lienket.innerHTML = "Xem chi tiết";
         lienket.setAttribute("href", obj.lienket + "?id=" + obj.id); 
         lienket.setAttribute("class", "btn btn-primary text-white"); 
 
-        const mua = document.createElement("a");
-        mua.innerHTML = "Mua ngay";
-        mua.href="#";
-        mua.className="btn btn-success ms-2";
+    
         // Thêm các phần tử vào container_infor
         container_infor.appendChild(ten);
         container_infor.appendChild(gia);
         container_infor.appendChild(mota);
         container_infor.appendChild(lienket);
-        container_infor.appendChild(mua);
-
+        
         item.appendChild(container_image); 
         item.appendChild(container_infor); 
 
