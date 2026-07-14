@@ -21,7 +21,7 @@ const product = [
         mota: "Hương thơm đẳng cấp, sang trọng đầy lôi cuốn phù hợp cho cả nam và nữ.",
         mota_dai: `Nước hoa Unisex Armaf Club De Nuit Untold Eau de Parfum...`,
         lienket: "html/chi-tiet.html",
-        img: "../assets/images/unisexarmaf.jpg",
+        img: "../assets/images/nh.jpg",
         alt: "Nước hoa Unisex Armaf Club De Nuit Untold",
         category: "nuoc-hoa"
     },
@@ -32,7 +32,7 @@ const product = [
         mota: "Kem nền che khuyết điểm cao, mỏng nhẹ và bền màu suốt 16 giờ.",
         mota_dai: `Kem nền cao cấp Nars Natural Radiant Longwear Foundation đột phá...`,
         lienket: "html/chi-tiet.html",
-        img: "../assets/images/nars.jpg",
+        img: "../assets/images/nar.jpg",
         alt: "Kem nền Nars Natural Radiant Longwear Foundation",
         category: "do-trang-diem"
     },
@@ -43,7 +43,7 @@ const product = [
         mota: "Hương thơm quý phái, lãng mạn lấy cảm hứng từ loài chim hồng hạc.",
         mota_dai: `Nước hoa niche xa xỉ The Merchant of Venice Flamant Rose Eau de Parfum...`,
         lienket: "html/chi-tiet.html",
-        img: "../assets/images/themerchantofvenice.jpg",
+        img: "../assets/images/the.jpg",
         alt: "Nước hoa nữ The Merchant of Venice Flamant Rose",
         category: "nuoc-hoa"
     },
