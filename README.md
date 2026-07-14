@@ -175,10 +175,11 @@ Sinh viên cần nộp đầy đủ các nội dung sau:
 Sinh viên cập nhật thông tin cá nhân tại đây:
 
 ```text
-Họ và tên:
-Mã số sinh viên:
-Lớp:
-Tên đề tài:
-Liên kết GitHub repository:
+Họ và tên: Phan Thúy Duy 
+Mã số sinh viên: 110125043
+Lớp: DA25TTA
+Tên đề tài:THIẾT KẾ WEBSITE GIỚI THIỆU 
+SẢN PHẨM LÀM ĐẸP
+Liên kết GitHub repository:https://github.com/TKW-22526/final-test-web-design-PhanThuyDuy.git
 Liên kết GitHub Pages:
 ```
