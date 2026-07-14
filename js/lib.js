@@ -162,6 +162,16 @@ function createItem(obj) {
 // HIỂN THỊ DANH SÁCH
 // ===========================
 
+function showEmptyState(message = "Không tìm thấy sản phẩm phù hợp.") {
+    const list = document.getElementById("list");
+    if (!list) return;
+
+    const emptyState = document.createElement("div");
+    emptyState.className = "empty-state";
+    emptyState.innerHTML = `<p>${message}</p>`;
+    list.appendChild(emptyState);
+}
+
 function loadAllProducts(arr) {
 
     const list = document.getElementById("list");
@@ -169,12 +179,9 @@ function loadAllProducts(arr) {
     if (!list) return;
 
     list.innerHTML = "";
-// Nếu không có sản phẩm nào thỏa mãn, hiển thị thông báo "Không tìm thấy sản phẩm phù hợp."
+
     if (!arr || arr.length === 0) {
-        const emptyState = document.createElement("div");
-        emptyState.className = "empty-state";
-        emptyState.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
-        list.appendChild(emptyState);
+        showEmptyState();
         return;
     }
 

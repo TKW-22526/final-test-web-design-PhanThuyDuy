@@ -60,74 +60,53 @@ function initCategoryFilter() {
 }
 
 // Hàm createItem để tạo một sản phẩm từ đối tượng obj
-        function createItem(obj) {
-        const list = document.getElementById("list"); 
-        if (!list) return; // Bảo vệ code không bị lỗi nếu trang không có thẻ #list
+function createItem(obj) {
+    const list = document.getElementById("list"); 
+    if (!list) return; // Bảo vệ code không bị lỗi nếu trang không có thẻ #list
 
-        // Tạo phần tử cha chứa sản phẩm
-        const item = document.createElement("div");
-        item.setAttribute("class","col-12 col-sm-6 col-lg-4"); 
-        item.innerHTML = "";
-        item.classList.add("product-card");
-        // Tạo phần tử chứa hình ảnh
-        const container_image = document.createElement("div"); 
-        container_image.setAttribute("class", "image text-center mb-3");
-
-        const img = document.createElement("img");
-        img.setAttribute("src", obj.img);
-        img.setAttribute("alt", obj.alt);
-        img.setAttribute("style","width:100%;height:220px;object-fit:contain;");
-        img.setAttribute("class", "rounded");
-
-        container_image.appendChild(img);
-        
-        // Tạo phần tử chứa thông tin sản phẩm
-        const container_infor = document.createElement("div");
-        container_infor.setAttribute("class", "info text-center");
-
-        const ten = document.createElement("p");
-        ten.setAttribute("class", "fw-bold text-success mb-1");
-        ten.innerHTML = obj.ten; 
-
-        const gia = document.createElement("p");
-        gia.setAttribute("class", "text-danger fw-bold mb-1");
-        gia.innerHTML = obj.gia;
-
-        const mota = document.createElement("p");
-        mota.setAttribute("class", "text-muted small mb-2");
-        mota.innerHTML = obj.mota; 
-        
-        // Tạo các nút "Xem chi tiết" 
-        const lienket = document.createElement("a");
-        lienket.innerHTML = "Xem chi tiết";
-        lienket.setAttribute("href", obj.lienket + "?id=" + obj.id); 
-        lienket.setAttribute("class", "btn btn-primary text-white"); 
-
+    // Tạo phần tử cha chứa sản phẩm bằng cấu trúc lưới của Bootstrap
+    const item = document.createElement("div");
+    item.setAttribute("class", "col-12 col-sm-6 col-lg-4"); 
     
-        // Thêm các phần tử vào container_infor
-        container_infor.appendChild(ten);
-        container_infor.appendChild(gia);
-        container_infor.appendChild(mota);
-        container_infor.appendChild(lienket);
-        
-        item.appendChild(container_image); 
-        item.appendChild(container_infor); 
+    // Thêm class product-card để ăn theo CSS flexbox làm bằng khung
+    item.classList.add("product-card");
 
-        list.appendChild(item); 
-    }
+    // Sử dụng chuỗi innerHTML sạch, đồng bộ hoàn toàn với stylesanpham.css
+    item.innerHTML = `
+        <div class="image">
+            <img src="${obj.img}" alt="${obj.alt}">
+        </div>
+        <div class="info">
+            <h3>${obj.ten}</h3>
+            <p class="price">${obj.gia}</p>
+            <p class="desc">${obj.mota}</p>
+            <div class="button-group">
+                <a href="${obj.lienket}?id=${obj.id}" class="btn-detail">Xem chi tiết</a>
+            </div>
+        </div>
+    `; 
 
+    list.appendChild(item); 
+}
         // Hàm loadAllProducts để tạo tất cả các sản phẩm từ mảng objArray
-    function loadAllProducts(objArray) {
+    function showEmptyState(message = "Không tìm thấy sản phẩm phù hợp.") {
+    const list = document.getElementById("list");
+    if (!list) return;
+
+    const emptyState = document.createElement("div");
+    emptyState.className = "col-12 empty-state";
+    emptyState.innerHTML = `<p>${message}</p>`;
+    list.appendChild(emptyState);
+}
+
+function loadAllProducts(objArray) {
         const list = document.getElementById("list");
         if (!list) return;
 
         list.innerHTML = "";
-// Nếu không có sản phẩm nào thỏa mãn, hiển thị thông báo "Không tìm thấy sản phẩm phù hợp."
+
         if (!objArray || objArray.length === 0) {
-            const emptyState = document.createElement("div");
-            emptyState.className = "col-12 empty-state";
-            emptyState.innerHTML = "<p>Không tìm thấy sản phẩm phù hợp.</p>";
-            list.appendChild(emptyState);
+            showEmptyState();
             return;
         }
 
