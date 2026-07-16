@@ -66,7 +66,7 @@ function createItem(obj) {
 
     // Tạo phần tử cha chứa sản phẩm bằng cấu trúc lưới của Bootstrap
     const item = document.createElement("div");
-    item.setAttribute("class", "col-12 col-sm-6 col-lg-4"); 
+    item.setAttribute("class", "col-12 col-sm-6 col-md-3"); 
     
     // Thêm class product-card để ăn theo CSS flexbox làm bằng khung
     item.classList.add("product-card");
