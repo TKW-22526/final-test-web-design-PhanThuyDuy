@@ -1,9 +1,28 @@
 // Biến toàn cục để lưu trữ dữ liệu sản phẩm
 let product = [];
 
+function resolveSitePath(path) {
+    if (!path || /^(https?:|mailto:|tel:|data:|#|javascript:)/i.test(path)) {
+        return path;
+    }
+
+    const currentPath = window.location.pathname.replace(/\\/g, "/");
+    const isNestedPage = currentPath.includes("/html/");
+
+    if (path.startsWith("./") || path.startsWith("../")) {
+        if (path.startsWith("../") && !isNestedPage) {
+            return path.replace(/^\.\.\//, "./");
+        }
+        return path;
+    }
+
+    const prefix = isNestedPage ? "../" : "./";
+    return prefix + path;
+}
+
 async function loadProductsFromJson() {
     try {
-        const response = await fetch("../js/Json.json"); // Đường dẫn đến file JSON chứa dữ liệu sản phẩm
+        const response = await fetch(resolveSitePath("js/Json.json")); // Đường dẫn đến file JSON chứa dữ liệu sản phẩm
         if (!response.ok) throw new Error("Không thể tải dữ liệu sản phẩm");
 
         const data = await response.json();// Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
@@ -74,14 +93,14 @@ function createItem(obj) {
     // Sử dụng chuỗi innerHTML sạch, đồng bộ hoàn toàn với stylesanpham.css
     item.innerHTML = `
         <div class="image">
-            <img src="${obj.img}" alt="${obj.alt}">
+            <img src="${resolveSitePath(obj.img)}" alt="${obj.alt}">
         </div>
         <div class="info">
             <h3>${obj.ten}</h3>
             <p class="price">${obj.gia}</p>
             <p class="desc">${obj.mota}</p>
             <div class="button-group">
-                <a href="${obj.lienket}?id=${obj.id}" class="btn-detail">Xem chi tiết</a>
+                <a href="${resolveSitePath(obj.lienket)}?id=${obj.id}" class="btn-detail">Xem chi tiết</a>
             </div>
         </div>
     `; 

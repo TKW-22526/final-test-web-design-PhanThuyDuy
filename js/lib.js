@@ -2,6 +2,25 @@
 // DỮ LIỆU SẢN PHẨM
 // ===========================
 
+function resolveSitePath(path) {
+    if (!path || /^(https?:|mailto:|tel:|data:|#|javascript:)/i.test(path)) {
+        return path;
+    } // Kiểm tra nếu đường dẫn là URL tuyệt đối hoặc các loại đường dẫn đặc biệt, trả về nguyên bản
+
+    const currentPath = window.location.pathname.replace(/\\/g, "/");
+    const isNestedPage = currentPath.includes("/html/");
+
+    if (path.startsWith("./") || path.startsWith("../")) {
+        if (path.startsWith("../") && !isNestedPage) {
+            return path.replace(/^\.\.\//, "./");
+        }
+        return path;
+    } // Nếu đường dẫn bắt đầu bằng "./" hoặc "../", trả về nguyên bản (hoặc thay đổi nếu cần thiết)
+
+    const prefix = isNestedPage ? "../" : "./";
+    return prefix + path;
+} // Hàm resolveSitePath để xác định đường dẫn đúng dựa trên vị trí hiện tại của trang web, giúp đảm bảo rằng các liên kết và tài nguyên được tải chính xác.
+
 const product = [
     {
         id: "20", // Giữ nguyên ID gốc của SK-II trong database
@@ -130,7 +149,7 @@ function createItem(obj) {
 
     item.innerHTML = `
         <div class="image">
-            <img src="${obj.img}" alt="${obj.alt}">
+            <img src="${resolveSitePath(obj.img)}" alt="${obj.alt}">
         </div>
 
         <div class="info">
@@ -143,7 +162,7 @@ function createItem(obj) {
 
             <div class="button-group">
 
-                <a href="${obj.lienket}?id=${obj.id}" class="btn-detail">
+                <a href="${resolveSitePath(obj.lienket)}?id=${obj.id}" class="btn-detail">
                     Xem chi tiết
                 </a>
 
