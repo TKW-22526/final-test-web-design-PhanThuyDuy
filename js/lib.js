@@ -89,28 +89,6 @@ const product = [
         category: "my-pham"
     },
     {
-        id: "12", // Giữ nguyên ID gốc của Make Up For Ever
-        ten: "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
-        gia: "950.000đ",
-        mota: "Bảng màu triệt sắc và che khuyết điểm chuyên nghiệp cho lớp nền không tì vết.",
-        mota_dai: `Bảng tạo khối và che khuyết điểm chuyên nghiệp Make Up For Ever Ultra HD Underpainting Palette...`,
-        lienket: "html/chi-tiet.html",
-        img: "assets/images/makeupforever.jpg",
-        alt: "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
-        category: "do-trang-diem"
-    },
-    {
-        id: "27", // Giữ nguyên ID gốc của Alien
-        ten: "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
-        gia: "2.850.000đ",
-        mota: "Hương thơm huyền biến, ma mị độc bản với nốt hương hoa nhài và hổ phách.",
-        mota_dai: `Nước hoa nữ cao cấp Thierry Mugler Alien Eau de Parfum...`,
-        lienket: "html/chi-tiet.html",
-        img: "assets/images/thierrymugler.jpg",
-        alt: "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
-        category: "nuoc-hoa"
-    },
-    {
         id: "18", // Giữ nguyên ID gốc của L'Oreal
         ten: "Nước tẩy trang L'Oreal Paris Micellar Water 3-in-1 Refreshing",
         gia: "175.000đ",

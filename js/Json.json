@@ -100,17 +100,6 @@
       "category": "nuoc-hoa"
     },
     {
-      "id": "10",
-      "ten": "Nước hoa nữ Anna Sui Fantasia Mermaid",
-      "gia": "1.450.000đ/1 chai",
-      "mota": "Hương thơm hoa cỏ ngọt ngào, lãng mạn với thiết kế nàng tiên cá",
-      "mota_dai": "Nước hoa nữ Anna Sui Fantasia Mermaid EDT lãng mạn và huyền bí:\n- Thiết kế vỏ chai cực kỳ lộng lẫy với biểu tượng nàng tiên cá bằng kim loại màu vàng trên nền nước xanh ngọc bích.\n- Thuộc nhóm hương hoa cỏ trái cây mang lại cảm giác ngọt ngào, tươi trẻ đầy mộng mơ.\n- Nốt hương đầu tươi vui từ cam quýt và tiêu hồng, chuyển dần sang hương giữa quyến rũ của hoa mẫu đơn, hoa nhài.\n- Lớp hương cuối đọng lại sự lôi cuốn, ấm áp của hương gỗ, vani và mật ong ngọt ngào.",
-      "lienket": "../html/chi-tiet.html",
-      "img": "../assets/images/annasui.jpg",
-      "alt": "Nước hoa nữ Anna Sui Fantasia Mermaid",
-      "category": "nuoc-hoa"
-    },
-    {
       "id": "11",
       "ten": "Phấn phủ dạng bột Lemonade Matte Addict Loose Powder",
       "gia": "180.000đ/1 hũ",
@@ -119,17 +108,6 @@
       "lienket": "../html/chi-tiet.html",
       "img": "../assets/images/lemonade.jpg",
       "alt": "Phấn phủ dạng bột Lemonade Matte Addict Loose Powder",
-      "category": "do-trang-diem"
-    },
-    {
-      "id": "12",
-      "ten": "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
-      "gia": "950.000đ/1 bảng",
-      "mota": "Bảng màu triệt sắc và che khuyết điểm chuyên nghiệp cho lớp nền không tì vết",
-      "mota_dai": "Bảng tạo khối và che khuyết điểm chuyên nghiệp Make Up For Ever Ultra HD Underpainting Palette:\n- Tích hợp nhiều ô màu từ triệt sắc (xanh, cam, vàng) đến các tông da giúp xử lý triệt để quầng thâm, mụn đỏ và đốm nâu.\n- Kết cấu dạng kem siêu mịn, độ che phủ cao nhưng mỏng nhẹ tự nhiên, không lộ vệt kem.\n- Công nghệ Ultra HD độc quyền giúp lớp trang điểm mướt mịn ngay cả dưới ống kính camera độ phân giải cao.\n- Khả năng tệp vào da xuất sắc, giữ tông màu bền bỉ không bị chảy nền.",
-      "lienket": "../html/chi-tiet.html",
-      "img": "../assets/images/makeupforever.jpg",
-      "alt": "Bảng kem che khuyết điểm Make Up For Ever Ultra HD Underpainting",
       "category": "do-trang-diem"
     },
     {
@@ -284,17 +262,6 @@
       "lienket": "../html/chi-tiet.html",
       "img": "../assets/images/the.jpg",
       "alt": "Nước hoa nữ The Merchant of Venice Flamant Rose",
-      "category": "nuoc-hoa"
-    },
-    {
-      "id": "27",
-      "ten": "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
-      "gia": "2.850.000đ/1 chai",
-      "mota": "Hương thơm huyền bí, ma mị độc bản với nốt hương hoa nhài và hổ phách",
-      "mota_dai": "Nước hoa nữ cao cấp Thierry Mugler Alien Eau de Parfum (Dạng chai có thể nạp lại):\n- Mang phong cách huyền bí, ma mị và đầy quyền lực như một viên đá bùa chú đến từ vũ trụ.\n- Hương mở đầu đầy ấn tượng với sự ngào ngạt, tinh khiết của hoa nhài Sambac Ấn Độ.\n- Tầng hương giữa là sự trỗi dậy ấm áp, đậm đà của các nốt hương gỗ cashmere quý hiếm.\n- Lớp hương cuối đọng lại sâu lắng, quyến rũ chết người nhờ hổ phách trắng nồng nàn.\n- Thiết kế chai mô phỏng viên đá thạch anh tím sắc sảo, đính chi tiết kim loại vàng vương giả.",
-      "lienket": "../html/chi-tiet.html",
-      "img": "../assets/images/thierrymugler.jpg",
-      "alt": "Nước hoa nữ Thierry Mugler Alien Refillable Talisman",
       "category": "nuoc-hoa"
     },
     {
