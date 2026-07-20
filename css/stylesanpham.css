@@ -200,6 +200,73 @@ nav ul li a.active {
 }
 
 
+/* ================= BỐ CỤC SIDEBAR + DANH SÁCH SẢN PHẨM ================= */
+.products-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-left: -10px;
+}
+
+.category-sidebar {
+    flex: 0 0 21%;
+    max-width: 21%;
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    position: sticky; /* Giữ sidebar cố định khi cuộn trang */
+    top: 250px; /* Khoảng cách từ đầu trang đến sidebar khi cuộn */
+}
+
+.category-sidebar h3 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column; /* Đặt các nút theo chiều dọc */
+    gap: 10px;
+}
+
+.category-btn {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #f8f8f8;
+    color: #333;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    transition: all .25s ease; /* Hiệu ứng chuyển màu mượt mà khi hover hoặc active */
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: #ff4d88;
+    color: #fff;
+    border-color: #ff4d88;
+}
+
+.products-content {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 991px) {
+    .products-layout {
+        flex-direction: column;
+    }
+
+    .category-sidebar {
+        flex-basis: 100%;
+        max-width: 100%;
+        position: static;
+    }
+}
+
 /* ================= KHUNG CHỨA SẢN PHẨM ================= */
 .product-card {
     background: white;

@@ -49,16 +49,22 @@
                 <h2>Tất cả sản phẩm</h2>
                 <p>Danh sách mỹ phẩm được lựa chọn từ thương hiệu uy tín.</p>
             </div>
-            <!-- Nút lọc danh mục -->
-            <div class="filter-buttons">
-                <button class="category-btn active" data-category="all">Tất cả</button>
-                <button class="category-btn" data-category="my-pham">Mỹ phẩm</button>
-                <button class="category-btn" data-category="do-trang-diem">Đồ trang điểm</button>
-                <button class="category-btn" data-category="nuoc-hoa">Nước hoa</button>
-            </div>
+            <div class="products-layout">
+                <aside class="category-sidebar"> <!-- Danh mục sản phẩm -->
+                    <h3>Danh mục sản phẩm</h3>
+                    <div class="category-list">
+                        <button type="button" class="category-btn active" data-category="all">Tất cả</button>
+                        <button type="button" class="category-btn" data-category="my-pham">Mỹ phẩm</button>
+                        <button type="button" class="category-btn" data-category="do-trang-diem">Trang điểm</button>
+                        <button type="button" class="category-btn" data-category="nuoc-hoa">Nước hoa</button>
+                    </div>
+                </aside>
 
-            <div id="list" class="row g-4">
-                <!-- Danh sách sản phẩm sẽ được hiển thị ở đây -->
+                <div class="products-content">
+                    <div id="list" class="row g-4">
+                        <!-- Danh sách sản phẩm sẽ được hiển thị ở đây -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>

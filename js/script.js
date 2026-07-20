@@ -148,15 +148,26 @@ function loadAllProducts(objArray) {
             productSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     });
+
+
     // Hàm thực hiện tìm kiếm sản phẩm dựa trên từ khóa
     function executeSearch() {
-        const keyword = searchInput.value.trim().toLowerCase();
-        const filteredProducts = product.filter(function (item) {
-            return item.ten.toLowerCase().includes(keyword);
-        });
+        const keyword = searchInput.value.trim().toLowerCase(); // Lấy từ khóa tìm kiếm và chuyển về chữ thường
+        if (!keyword) {
+            loadAllProducts(product); // Nếu từ khóa rỗng, hiển thị tất cả sản phẩm
+            return;
+        }
+        const activeCategory = document.querySelector(".category-btn.active")?.dataset.category || "all"; // Lấy danh mục đang chọn, mặc định là "all" nếu không có danh mục nào được chọn
+        const filteredProducts = product.filter(function (item) { 
+            const matchesCategory = activeCategory === "all" || item.category === activeCategory; // Kiểm tra xem sản phẩm có thuộc danh mục đang chọn hay không
+            const matchesKeyword = item.ten.toLowerCase().includes(keyword);  // Kiểm tra xem tên sản phẩm có chứa từ khóa tìm kiếm hay không
+            return matchesCategory && matchesKeyword; 
+        }); 
 
         loadAllProducts(filteredProducts);
     }
+
+
     // Thêm sự kiện khi người dùng nhấn Enter trong ô tìm kiếm
     searchInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
