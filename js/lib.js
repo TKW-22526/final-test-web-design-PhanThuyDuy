@@ -200,27 +200,27 @@ function updateActiveCategoryButton(category) {
         button.classList.toggle("active", button.dataset.category === category);
     });
 }
-
+// Hàm applyCategoryFilter để lọc sản phẩm dựa trên danh mục
 function applyCategoryFilter(category) {
     if (category === "all") {
         loadAllProducts(product);
     } else {
         const filtered = product.filter(function(item) {
-            return item.category === category;
+            return item.category === category; 
         });
         loadAllProducts(filtered);
     }
-    updateActiveCategoryButton(category);
+    updateActiveCategoryButton(category); // Cập nhật trạng thái nút danh mục được chọn
 }
 
-function initCategoryFilter() {
-    const buttons = document.querySelectorAll(".category-btn");
-    if (!buttons.length) return;
+function initCategoryFilter() { 
+    const buttons = document.querySelectorAll(".category-btn"); // Lấy tất cả các nút danh mục
+    if (!buttons.length) return; // Bảo vệ code không bị lỗi nếu trang không có thẻ .category-btn
 
-    buttons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const category = button.dataset.category;
-            applyCategoryFilter(category);
+    buttons.forEach(function(button) { // Lặp qua từng nút danh mục
+        button.addEventListener("click", function() { // Lắng nghe sự kiện click trên từng nút danh mục
+            const category = button.dataset.category;  // Lấy giá trị danh mục từ thuộc tính data-category của nút được click
+            applyCategoryFilter(category); // Gọi hàm lọc sản phẩm dựa trên danh mục được chọn
         });
     });
 }
@@ -248,11 +248,11 @@ function initSearch() {
 
     // Hàm thực hiện xử lý lọc sản phẩm
     function executeSearch() {
-        const keyword = searchInput.value.trim().toLowerCase();
+        const keyword = searchInput.value.trim().toLowerCase(); // Lấy từ khóa tìm kiếm và chuyển về chữ thường
 
         const result = product.filter(function(item){
             return item.ten.toLowerCase().includes(keyword);
-        });
+        }); 
 
         // Chỉ hiển thị các sản phẩm thỏa mãn sau khi nhấn Enter/Click
         loadAllProducts(result);

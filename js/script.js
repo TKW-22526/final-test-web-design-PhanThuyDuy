@@ -137,7 +137,7 @@ function loadAllProducts(objArray) {
 
    // Hàm xử lý tìm kiếm sản phẩm 
     function initSearch() {
-    const searchInput = document.getElementById("search-input");
+    const searchInput = document.getElementById("search-input"); 
     const searchBtn = document.getElementById("search-btn");
     const productSection = document.querySelector(".products-section") || document.querySelector(".product");
     // Bảo vệ code không bị lỗi nếu trang không có thẻ #search-input
