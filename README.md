@@ -180,6 +180,6 @@ Mã số sinh viên: 110125043
 Lớp: DA25TTA
 Tên đề tài:THIẾT KẾ WEBSITE GIỚI THIỆU 
 SẢN PHẨM LÀM ĐẸP
-Liên kết GitHub repository:https://github.com/TKW-22526/final-test-web-design-PhanThuyDuy.git
-Liên kết GitHub Pages:
+Liên kết GitHub repository: https://github.com/TKW-22526/final-test-web-design-PhanThuyDuy.git
+Liên kết GitHub Pages: https://tkw-22526.github.io/final-test-web-design-PhanThuyDuy/
 ```
